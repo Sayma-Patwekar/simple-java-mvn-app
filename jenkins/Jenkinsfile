@@ -14,6 +14,7 @@ pipeline {
             steps {
                 //git branch: 'main', url: 'https://github.com/Sayma-Patwekar/simple-java-mvn-app.git'
                 sh 'mvn -B -DskipTests clean package'
+                archiveArtifacts 'target/my-app-*.jar'
             }
         }
         stage('Test') {
